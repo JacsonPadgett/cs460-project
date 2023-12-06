@@ -15,11 +15,16 @@ public class LockSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(PlayerAspects.instance.search(lockID)){
-            rigidBody.isKinematic = false;
-            grabInteractable.enabled = true;
-        }
+    public void unlockDoor(){
+        rigidBody.isKinematic = false;
+        grabInteractable.enabled = true;
+
     }
+
+    public void lockDoor(){
+        rigidBody.isKinematic = true;
+        grabInteractable.enabled = false;
+    }
+
+    void Update(){}
 }

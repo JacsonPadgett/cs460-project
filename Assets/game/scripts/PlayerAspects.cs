@@ -6,6 +6,8 @@ public class PlayerAspects : MonoBehaviour
 {
     public static PlayerAspects instance;
     private List<int> keys = new List<int>();
+    public LockSystem[] doors;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,7 @@ public class PlayerAspects : MonoBehaviour
         }
         else{
             instance = this;
+            doors = FindObjectsOfType<LockSystem>();
         }
     }
 
@@ -24,8 +27,17 @@ public class PlayerAspects : MonoBehaviour
     }
 
     public void addKey(int keyID){
-        keys.Add(keyID);
-        Debug.Log("added key with id: " + keyID);
+        if(!keys.Contains(keyID)){
+            keys.Add(keyID);
+            Debug.Log("added key with id: " + keyID);
+
+            foreach (LockSystem door in doors)
+            {
+                if(door.lockID == keyID){
+                    door.unlockDoor();
+                }
+            }
+        }
     }
 
     public bool search(int keyID){
