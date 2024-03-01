@@ -156,6 +156,19 @@ public class SaveManager : MonoBehaviour
         return PlayerPrefs.GetFloat("VolumeSetting");
     }
 
+        public void SaveSubtitles(bool isEnabled)
+    {
+        PlayerPrefs.SetInt("SubtitlesSetting", isEnabled ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+        public static bool LoadSubtitles()
+    {
+        // Default value is true if not found
+        return PlayerPrefs.GetInt("SubtitlesSetting", 1) == 1;
+    }
+
+
     // Saving the game data 
 
     public void SaveGameDataToBinaryFile(AllGameData gameData)

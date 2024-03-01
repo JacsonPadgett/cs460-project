@@ -6,6 +6,11 @@ using UnityEngine;
 public class ObtainKey : MonoBehaviour
 {
     public int keyID;
+    AudioManager audioManager;
+
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioManager>();
+    }
 
     public bool masterKey;
     // Start is called before the first frame update
@@ -17,12 +22,14 @@ public class ObtainKey : MonoBehaviour
             foreach(LockSystem door in PlayerAspects.instance.doors)
             {
                 PlayerAspects.instance.addKey(door.lockID);
+                audioManager.PlaySFX(audioManager.keyPickup);
                 Destroy(this.gameObject);
             }
         }
         else{
             if(this.gameObject != null){
                 PlayerAspects.instance.addKey(keyID);
+
                 Destroy(this.gameObject);
             }
         }
