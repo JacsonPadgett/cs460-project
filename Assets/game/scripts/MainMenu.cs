@@ -7,7 +7,17 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject playerObject;
 
+    void Start()
+    {
+        // Set playerObject to the GameObject with the "Player" tag
+        playerObject = GameObject.FindWithTag("PlayerObject");
 
+        // Check if playerObject is null (no GameObject with the "Player" tag found)
+        if (playerObject == null)
+        {
+            Debug.LogError("Player object not found in the scene!");
+        }
+    }
 
     public void Level1(){
         // Set the player's position after loading the scene
