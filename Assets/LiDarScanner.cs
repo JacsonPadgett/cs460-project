@@ -24,8 +24,6 @@ public class LiDarScanner : MonoBehaviour
     [SerializeField] private GameObject _vfxContainer;
     [SerializeField] private Transform _castPoint;
     [SerializeField] private float _radius = 10f;
-    [SerializeField] private float _maxRadius = 10f;
-    [SerializeField] private float _minRadius = 1f;
     [SerializeField] private int _pointsPerScan = 40;
     [SerializeField] private float _range = 10f;
     [SerializeField] private int resolution = 100;
