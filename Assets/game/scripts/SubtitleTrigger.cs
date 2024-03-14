@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SubtitleTrigger : MonoBehaviour
 {
-    [SerializeField] SubtitleController subtitleController;
-    void OnTriggerEnter(Collider other){
-        StartCoroutine(subtitleController.TypeWriter(Random.Range(0,10)));
-    }
+//     [SerializeField] SubtitleController subtitleController;
+//     [SerializeField] string phrase;
+//     void OnTriggerEnter(Collider other){
+//         StartCoroutine(subtitleController.TypeWriter(phrase));
+//     }
 }

@@ -14,6 +14,7 @@ public class SubtitleController : MonoBehaviour
     [SerializeField] TextMeshPro subtitle;
     [SerializeField] string[] phrases;
     [SerializeField] float typingSpeed;
+    [SerializeField] float clearSpeed;
     public float changeMe;
 
 
@@ -31,14 +32,20 @@ public class SubtitleController : MonoBehaviour
         
     }
 
-    public IEnumerator TypeWriter(int phraseIndex){
-        string phrase = phrases[phraseIndex];
+    public void startTypeWriter(string phrase){
+        StartCoroutine(TypeWriter(phrase));
+    }
+
+    public IEnumerator TypeWriter(string phrase){
         subtitle.text = "";
 
         for(int i = 0; i < phrase.Length; i++){
             subtitle.text += phrase[i];
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        yield return new WaitForSeconds(clearSpeed);
+        subtitle.text = "";
         
         yield break;
     }

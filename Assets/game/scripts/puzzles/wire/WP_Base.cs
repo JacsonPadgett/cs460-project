@@ -7,30 +7,16 @@ public class WP_Base : MonoBehaviour
 {
     public XRSocketInteractor XRSI;
     public GameObject attached;
-    //Whole Puzzle ID
-    public int puzzle_id;
-    //Individual BP ID
-    public int BP_id;
     //Correct Piece Type
-    public int correct_piece_id;
+    public int correct_type;
     //Correct Piece Rotation
-    public int correct_subpiece_id;
+    public int correct_rotation;
     [HideInInspector]
     public bool isCorrect = false;
 
     public GameObject[] lights;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public WP_Manager_New puzzleManager;
 
     public void checkPiece()
     {
@@ -40,13 +26,16 @@ public class WP_Base : MonoBehaviour
             attached = XRSI.selectTarget.gameObject;
         }
 
-        if(attached != null && correct_piece_id == attached.GetComponent<WP_Piece>().id && correct_subpiece_id == attached.GetComponent<WP_Piece>().sub_id)
-        {
-            isCorrect = true;
+        if(attached != null && correct_type == attached.GetComponent<WP_Piece>().type && correct_rotation == attached.GetComponent<WP_Piece>().rotation)
+        {            
             foreach (GameObject light in lights)
             {
                 light.SetActive(true);
             }
+            
+            isCorrect = true;
+            puzzleManager.checkSolution();
+
             Debug.Log("Correct Piece Set");
         }
         else
@@ -58,7 +47,7 @@ public class WP_Base : MonoBehaviour
             }
             Debug.Log("Incorrect Piece Set / Incorrect Rotation / No Piece Set");
         }
-        WP_Manager.checkSolution(puzzle_id);
+        puzzleManager.checkSolution();
     }
 
     public void removePiece()
@@ -73,7 +62,6 @@ public class WP_Base : MonoBehaviour
         }
 
         Debug.Log("Piece has been removed");
-        WP_Manager.checkSolution(puzzle_id);
     }
 
     public void rotatePiece()
