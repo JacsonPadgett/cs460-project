@@ -5,19 +5,24 @@ using UnityEngine;
 public class PlayerAspects : MonoBehaviour
 {
     public static PlayerAspects instance;
-    private List<int> keys = new List<int>();
+    public static List<int> keys = new List<int>();
     public LockSystem[] doors;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         if(instance != null && instance != this){
-            Destroy(this);
+            Destroy(this.gameObject);
+            return;
         }
         else{
             instance = this;
             doors = FindObjectsOfType<LockSystem>();
         }
+
+        GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -47,5 +52,16 @@ public class PlayerAspects : MonoBehaviour
         else{
             return false;
         }
+    }
+
+        // Static method to access the instance
+    public static PlayerAspects GetInstance()
+    {
+        return instance;
+    }
+
+
+    public static List<int> GetKeys(){
+        return keys;
     }
 }
