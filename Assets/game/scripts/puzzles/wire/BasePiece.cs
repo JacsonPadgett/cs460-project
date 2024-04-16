@@ -8,7 +8,6 @@ public class BasePiece : MonoBehaviour
 
     public XRSocketInteractor snapZone;
     private GameObject attachedPiece;
-     AudioManager audioManager;
     public int id;
 
     [HideInInspector]
@@ -16,7 +15,7 @@ public class BasePiece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioManager>();
+        
     }
 
     // Update is called once per frame
@@ -29,7 +28,7 @@ public class BasePiece : MonoBehaviour
             attachedPiece = snapZone.selectTarget.gameObject;
             attachedPiece.GetComponent<InteractablePiece>().updateRotation();
     
-            audioManager.PlaySFX(audioManager.puzzlePieceDown);
+
             if(id == attachedPiece.GetComponent<InteractablePiece>().id){
                 isCorrect = true;
                 Debug.Log("correct");

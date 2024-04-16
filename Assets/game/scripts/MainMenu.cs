@@ -22,15 +22,15 @@ public class MainMenu : MonoBehaviour
     public void Level1(){
         // Set the player's position after loading the scene
         
-        Vector3 postion = new Vector3(-0.0242893547f,1f,-3.40272021f);
-        FindObjectOfType<SceneController>().SwitchScene("DemoScene", postion);
+        Vector3 postion = new Vector3(0, 2, 0);
+        FindObjectOfType<SceneController>().SwitchScene("Level1", postion);
     }
     public void Level2()
     {
         // Set the player's position after loading the scene
         
-        Vector3 postion = new Vector3(0, 2, 0);
-        FindObjectOfType<SceneController>().SwitchScene("Testing Scene", postion);
+        Vector3 postion = new Vector3(-16f,2f,24f);
+        FindObjectOfType<SceneController>().SwitchScene("Level2", postion);
 
     }
 

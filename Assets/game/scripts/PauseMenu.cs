@@ -13,7 +13,6 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pasueMenu.SetActive(false);
-        pasueMenu.transform.position += new Vector3(0,1,0);
     }
 
 
@@ -29,7 +28,6 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 PauseGame();
-                
             }
         }
     }
@@ -49,7 +47,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        Vector3 postion = new Vector3(0, 1, -2);
+        Vector3 postion = new Vector3(0, 2, -1.5f);
         FindObjectOfType<SceneController>().SwitchScene("MainMenu", postion);
         isPaused = false;
     }

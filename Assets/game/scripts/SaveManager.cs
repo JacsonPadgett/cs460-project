@@ -46,7 +46,7 @@ public class SaveManager : MonoBehaviour
             case "MainMenu":
                 playerCurrentLevel = 0;
                 break;
-            case "DemoScene":
+            case "Testing Scene":
                 playerCurrentLevel = 1;
                 break;
             case "Level 2":
@@ -55,7 +55,7 @@ public class SaveManager : MonoBehaviour
             case "Level 3":
                 playerCurrentLevel = 3;
                 break;
-            case "Testing Scene":
+            case "Level 4":
                 playerCurrentLevel = 4;
                 break;
         }
@@ -108,7 +108,7 @@ public class SaveManager : MonoBehaviour
                 SceneManager.LoadScene("MainMenu");
                 break;
             case 1:
-                SceneManager.LoadScene("DemoScene");
+                SceneManager.LoadScene("Testing Scene");
                 break;
             case 2:
                 SceneManager.LoadScene("Level 2");
@@ -117,7 +117,7 @@ public class SaveManager : MonoBehaviour
                 SceneManager.LoadScene("Level 3");
                 break;
             case 4:
-                SceneManager.LoadScene("Testing Scene");
+                SceneManager.LoadScene("Level 4");
                 break;
         }
 

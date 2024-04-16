@@ -23,11 +23,6 @@ public class WP_Manager_New : MonoBehaviour
     public string phrase;
     public bool phraseComplete = false;
 
-    void Start(){
-        Time.timeScale = 1;
-        subtitleController = GameObject.FindGameObjectsWithTag("SubtitleObject")[0].GetComponent<SubtitleController>();
-    }
-
     public void checkSolution(){
         //Return if any 1 piece is incorrect
         foreach(WP_Base bp in basePieces){
