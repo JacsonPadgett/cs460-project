@@ -10,7 +10,7 @@ manipulate objects.
 
 ## Demo
 
-[Click here to view some gameplay!](https://drive.google.com/file/d/1VQa2z3kMxj2oTFH29JGAz57XrGestTqt/view?usp=sharing)
+[Click here to view some gameplay!](https://www.youtube.com/watch?v=pvOH_1CcZ7g)
 
 ## Want to try it out?
 1. Download the game [here](https://drive.google.com/file/d/1VQa2z3kMxj2oTFH29JGAz57XrGestTqt/view?usp=sharing)
