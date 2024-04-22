@@ -11,7 +11,7 @@ public class LockSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        grabInteractable = gameObject.GetComponent<XRGrabInteractable>();
     }
 
     // Update is called once per frame

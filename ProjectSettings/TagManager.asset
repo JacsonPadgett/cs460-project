@@ -7,6 +7,10 @@ TagManager:
   - Left Hand
   - Right Hand
   - Door
+  - PlayerObject
+  - SubtitleObject
+  - AudioManager
+  - FinalPiece
   layers:
   - Default
   - TransparentFX
@@ -14,12 +18,12 @@ TagManager:
   - 
   - Water
   - UI
+  - InvisibleGeometry
   - 
+  - Door
   - 
-  - 
-  - 
-  - 
-  - 
+  - Portal
+  - PortalInside
   - 
   - 
   - 

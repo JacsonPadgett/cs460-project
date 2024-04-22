@@ -17,13 +17,13 @@ public class ObtainKey : MonoBehaviour
             foreach(LockSystem door in PlayerAspects.instance.doors)
             {
                 PlayerAspects.instance.addKey(door.lockID);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
         else{
             if(this.gameObject != null){
                 PlayerAspects.instance.addKey(keyID);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }
